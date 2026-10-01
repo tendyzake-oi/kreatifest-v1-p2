@@ -68,9 +68,9 @@ export const services = {
 
 export const projects = {
   eyebrow: 'Portfolio / Projects',
-  title: 'Eksplorasi proyek dalam berbagai bentuk.',
+  title: 'Project yang telah kami kerjakan',
   description:
-    'Placeholder case study untuk menunjukkan cara project dapat ditampilkan secara visual di halaman ini.',
+    'Berikut adalah beberapa proyek yang telah kami kerjakan, mencakup berbagai bidang seperti branding, digital marketing, desain grafis, dan fotografi. Setiap proyek mencerminkan dedikasi kami dalam memberikan solusi kreatif yang efektif dan inovatif untuk klien kami.',
   items: [
     { id: 'aurora', name: 'Project Aurora', category: 'Branding', badge: 'Concept project' },
     { id: 'nusa', name: 'Nusa Digital', category: 'Digital', badge: 'Placeholder case study' },
@@ -109,10 +109,10 @@ export const cta = {
 }
 
 export const contact = {
-  eyebrow: 'Contact',
-  title: 'Mari membuka percakapan.',
+  eyebrow: 'Contact & FAQ',
+  title: 'Hubungi Kreatifest Indonesia',
   description:
-    'Kontak berikut adalah placeholder. Ganti dengan kanal komunikasi resmi sebelum halaman dipublikasikan.',
+    'Kami siap membantu Anda dalam membangun brand dan meningkatkan bisnis Anda melalui layanan kreatif kami. Silakan hubungi kami melalui salah satu saluran di bawah ini atau isi formulir kontak untuk memulai percakapan.',
   channels: [
     { 
       icon: 'mail', 
@@ -137,14 +137,25 @@ export const contact = {
       text: 'Halo, Kreatifest Indonesia! Saya tertarik untuk mengetahui lebih lanjut tentang layanan Kreatifest. Apakah saya bisa mendapatkan informasi lebih detail mengenai layanan yang tersedia?Terima kasih. :) ' // Teks pesan otomatis
     },
   ],
-  formNotice:
-    'Form visual placeholder — hubungkan ke sistem penerimaan pesan sebelum digunakan untuk mengirim data.',
-  fields: {
-    name: { label: 'Nama', placeholder: 'Nama Anda' },
-    email: { label: 'Email', placeholder: 'email@contoh.com' },
-    message: { label: 'Ceritakan kebutuhan Anda', placeholder: 'Tulis gambaran singkat kebutuhan Anda…' },
-  },
-  submit: 'Kirim pesan',
+  // Data FAQ Baru
+  faqs: [
+    {
+      question: 'Layanan apa saja yang disediakan oleh Kreatifest?',
+      answer: 'Kreatifest menyediakan berbagai layanan kreatif digital mulai dari pengembangan brand identity, desain grafis, pengelolaan media sosial, hingga pembuatan website dan konten kreatif.'
+    },
+    {
+      question: 'Berapa lama waktu pengerjaan sebuah proyek?',
+      answer: 'Waktu pengerjaan bervariasi tergantung pada kompleksitas dan skala proyek. Umumnya berkisar antara 1 hingga 4 minggu setelah brief disepakati.'
+    },
+    {
+      question: 'Bagaimana alur/proses kerja sama di Kreatifest?',
+      answer: 'Proses diawali dengan sesi konsultasi/briefing, penawaran harga, pembuatan konsep awal, sesi revisi, hingga penyerahan hasil akhir proyek.'
+    },
+    {
+      question: 'Apakah bisa melakukan kustomisasi paket layanan?',
+      answer: 'Tentu saja! Kami menyediakan solusi kustom yang dapat disesuaikan dengan kebutuhan dan anggaran bisnis Anda.'
+    }
+  ]
 }
 
 export const footer = {
@@ -155,29 +166,23 @@ export const footer = {
     label: 'Jl. Brigadir Jend. Katamso No.19B Lt 3, Cihaur Geulis, Kec. Cibeunying Kidul, Kota Bandung, Jawa Barat 40122',
     href: 'https://maps.app.goo.gl/ny6BSkMfX3AE1uPPA',
   },
-  quickLinksTitle: 'Quick Links',
-  quickLinks: [
-    { label: 'About', href: '#about' },
-    { label: 'Services', href: '#services' },
-    { label: 'Portfolio', href: '#portfolio' },
-  ],
   socialTitle: 'Kontak Kami',
   social: [
     { 
-      type: 'mail',
+      icon: 'mail',
       label: 'Email', 
       value: 'kreatifest.ind@gmail.com',
       subject: 'Halo, saya ingin bertanya',
       body: 'Halo admin, saya tertarik untuk mengetahui lebih lanjut tentang layanan Kreatifest. Apakah saya bisa mendapatkan informasi lebih detail mengenai layanan yang tersedia? Terima kasih.'
     },
     { 
-      type: 'instagram',
+      icon: 'instagram',
       label: 'Instagram', 
       value: 'kreatifest.co',
       text: 'Halo, Kreatifest Indonesia! Saya tertarik untuk mengetahui lebih lanjut tentang layanan Kreatifest. Apakah saya bisa mendapatkan informasi lebih detail mengenai layanan yang tersedia?Terima kasih. :) '
     },
     { 
-      type: 'whatsapp',
+      icon: 'whatsapp',
       label: 'WhatsApp', 
       value: '6285214102735',
       text: 'Halo, Kreatifest Indonesia! Saya tertarik untuk mengetahui lebih lanjut tentang layanan Kreatifest. Apakah saya bisa mendapatkan informasi lebih detail mengenai layanan yang tersedia?Terima kasih. :) '

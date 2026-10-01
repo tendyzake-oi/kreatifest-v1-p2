@@ -3,35 +3,27 @@ import Icon from '../ui/Icon'
 import './Footer.css'
 
 function getSocialHref(link) {
-  if (link.type === 'whatsapp') {
+  // Cek berdasarkan property type atau icon yang ada di data
+  const type = link.type || link.icon
+
+  if (type === 'whatsapp') {
     const textParam = link.text ? `?text=${encodeURIComponent(link.text)}` : ''
     return `https://wa.me/${link.value}${textParam}`
   }
   
-  if (link.type === 'mail') {
+  if (type === 'mail') {
     const to = encodeURIComponent(link.value)
     const su = link.subject ? encodeURIComponent(link.subject) : ''
     const body = link.body ? encodeURIComponent(link.body) : ''
     return `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${su}&body=${body}`
   }
   
-  if (link.type === 'instagram') {
+  if (type === 'instagram') {
+    // Tautan langsung ke ruang DM Instagram
     return `https://ig.me/m/${link.value}`
   }
 
   return link.href || '#'
-}
-
-function handleSocialClick(link, event) {
-  if (link.type === 'instagram' && link.text) {
-    navigator.clipboard.writeText(link.text)
-      .then(() => {
-        alert('Pesan otomatis telah disalin! Silakan "Paste" (Tempel) di kolom DM Instagram.')
-      })
-      .catch((err) => {
-        console.error('Gagal menyalin teks: ', err)
-      })
-  }
 }
 
 function FooterColumn({ title, links, isSocial = false }) {
@@ -48,7 +40,6 @@ function FooterColumn({ title, links, isSocial = false }) {
                 href={href} 
                 target={isSocial ? "_blank" : undefined}
                 rel={isSocial ? "noopener noreferrer" : undefined}
-                onClick={isSocial ? (e) => handleSocialClick(link, e) : undefined}
                 className="footer__link"
               >
                 {link.icon && <Icon name={link.icon} size={18} />}
@@ -74,7 +65,7 @@ export default function Footer() {
             <p className="footer__desc">{footer.description}</p>
           </div>
 
-          {/* Kolom 2: Alamat (Di Sebelah Kiri Quick Links) */}
+          {/* Kolom 2: Alamat */}
           <div className="footer__col">
             <h2 className="footer__col-title">{footer.addressTitle}</h2>
             <a 
@@ -88,10 +79,7 @@ export default function Footer() {
             </a>
           </div>
 
-          {/* Kolom 3: Quick Links */}
-          <FooterColumn title={footer.quickLinksTitle} links={footer.quickLinks} />
-
-          {/* Kolom 4: Kontak Kami (Email, IG, WA) */}
+          {/* Kolom 3: Kontak Kami (Email, IG, WA) */}
           <FooterColumn title={footer.socialTitle} links={footer.social} isSocial={true} />
         </div>
 

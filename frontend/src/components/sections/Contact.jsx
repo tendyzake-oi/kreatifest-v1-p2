@@ -1,18 +1,22 @@
+import { useState } from 'react'
 import { contact } from '../../data/content'
 import SectionHeading from '../ui/SectionHeading'
 import IconTile from '../ui/IconTile'
-import Button from '../ui/Button'
 import Icon from '../ui/Icon'
 import './Contact.css'
 
 export default function Contact() {
-  const { fields } = contact
+  // State untuk menyimpan indeks FAQ yang sedang terbuka
+  const [openIndex, setOpenIndex] = useState(null)
 
-  const handleSubmit = (event) => event.preventDefault()
+  const toggleFaq = (index) => {
+    setOpenIndex(openIndex === index ? null : index)
+  }
 
   return (
     <section id="contact" className="section contact" aria-labelledby="contact-title">
       <div className="container--wide contact__inner">
+        {/* Bagian Kiri: Channels */}
         <div className="contact__info">
           <SectionHeading id="contact-title" eyebrow={contact.eyebrow} title={contact.title} description={contact.description} />
 
@@ -29,13 +33,11 @@ export default function Contact() {
                 const body = channel.body ? encodeURIComponent(channel.body) : ''
                 href = `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${su}&body=${body}`
               } else if (channel.icon === 'instagram') {
-                // Tautan langsung ke ruang DM Instagram
                 href = `https://ig.me/m/${channel.value}`
               } else {
                 href = channel.value
               }
 
-              // Menentukan teks yang ditampilkan di layar
               let displayValue = channel.value
               if (channel.icon === 'whatsapp') {
                 displayValue = `+${channel.value}`
@@ -65,29 +67,30 @@ export default function Contact() {
           </ul>
         </div>
 
-        <form className="contact__form" onSubmit={handleSubmit}>
-          <p className="contact__notice" role="note">
-            <Icon name="info" size={18} />
-            <span>{contact.formNotice}</span>
-          </p>
-
-          <label className="field">
-            <span className="field__label">{fields.name.label}</span>
-            <input className="field__control" type="text" name="name" autoComplete="name" placeholder={fields.name.placeholder} required />
-          </label>
-
-          <label className="field">
-            <span className="field__label">{fields.email.label}</span>
-            <input className="field__control" type="email" name="email" autoComplete="email" placeholder={fields.email.placeholder} required />
-          </label>
-
-          <label className="field">
-            <span className="field__label">{fields.message.label}</span>
-            <textarea className="field__control field__control--area" name="message" rows={4} placeholder={fields.message.placeholder} required />
-          </label>
-
-          <Button type="submit" icon="send">{contact.submit}</Button>
-        </form>
+        {/* Bagian Kanan: Komponen Accordion FAQ */}
+        <div className="contact__faq">
+          <h3 className="faq__title">Frequently Asked Questions</h3>
+          <div className="faq__list">
+            {contact.faqs.map((faq, index) => {
+              const isOpen = openIndex === index
+              return (
+                <div key={index} className={`faq__item ${isOpen ? 'faq__item--open' : ''}`}>
+                  <button className="faq__question" onClick={() => toggleFaq(index)} aria-expanded={isOpen}>
+                    <span>{faq.question}</span>
+                    <span className="faq__icon">
+                      <Icon name={isOpen ? 'chevronUp' : 'chevronDown'} size={20} />
+                    </span>
+                  </button>
+                  {isOpen && (
+                    <div className="faq__answer">
+                      <p>{faq.answer}</p>
+                    </div>
+                  )}
+                </div>
+              )
+            })}
+          </div>
+        </div>
       </div>
     </section>
   )
