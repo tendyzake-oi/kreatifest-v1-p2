@@ -3,10 +3,11 @@
  * Ingin mengganti kata-kata, nama proyek, atau kontak? Edit file ini saja —
  * tidak perlu membuka komponen.
  */
+import logoimg from '../../Assets/kreatifest-logo.png'
 
 export const brand = {
   name: 'Kreatifest Indonesia',
-  logo: '../assets/kreatifest-logo.png', // ganti sesuai lokasi file gambar logo kamu (contoh: /logo.png, src/assets/logo.svg)
+  logo: logoimg,
 }
 
 export const navLinks = [
