@@ -6,7 +6,7 @@
 
 export const brand = {
   name: 'Kreatifest Indonesia',
-  logo: '../public/favicon.svg', // ganti sesuai lokasi file gambar logo kamu (contoh: /logo.png, src/assets/logo.svg)
+  logo: '../assets/kreatifest-logo.png', // ganti sesuai lokasi file gambar logo kamu (contoh: /logo.png, src/assets/logo.svg)
 }
 
 export const navLinks = [
