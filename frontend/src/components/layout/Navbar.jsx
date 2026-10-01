@@ -21,7 +21,8 @@ export default function Navbar() {
     <header className="navbar">
       <div className="container navbar__inner">
         <a href="#home" className="navbar__logo" onClick={closeMenu}>
-          {brand.name}
+          <img src={brand.logo} alt={brand.name} className="navbar__logo-img" />
+          <span>{brand.name}</span>
         </a>
 
         <nav
