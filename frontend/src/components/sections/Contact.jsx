@@ -69,7 +69,7 @@ export default function Contact() {
 
         {/* Bagian Kanan: Komponen Accordion FAQ */}
         <div className="contact__faq">
-          <h3 className="faq__title">Frequently Asked Questions</h3>
+          <h3 className="faq__title">Pertanyaan Umum</h3>
           <div className="faq__list">
             {contact.faqs.map((faq, index) => {
               const isOpen = openIndex === index

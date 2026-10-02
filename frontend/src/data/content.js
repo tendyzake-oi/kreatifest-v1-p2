@@ -32,8 +32,8 @@ export const highlights = [
   { icon: 'monitor', tone: 'coral', label: 'Jasa Foto & Video', photo: 'jasa-foto-video.jpg' },
   { icon: 'users', tone: 'amber', label: 'Jasa Desain', photo: 'jasa-desain.jpg' },
   { icon: 'motion', tone: 'violet', label: 'Kreatif Studio', photo: 'kreatif-studio.jpg' },
-  { icon: 'whatsapp', tone: 'violet', label: 'Digital Marketing', photo: 'digital-marketing.jpg' },
-  { icon: 'website', tone: 'violet', label: 'Jasa Website', photo: 'jasa-website.jpg' },
+  { icon: 'whatsapp', tone: 'coral', label: 'Digital Marketing', photo: 'digital-marketing.jpg' },
+  { icon: 'website', tone: 'amber', label: 'Jasa Website', photo: 'jasa-website.jpg' },
 ]
 
 export const about = {
@@ -61,8 +61,8 @@ export const services = {
     { icon: 'chat', tone: 'violet', title: 'Social Media Management', text: 'Pengelolaan akun media sosial secara profesional' },
     { icon: 'monitor', tone: 'coral', title: 'Jasa Foto & Video', text: 'Produksi konten visual dan audiovisual yang berkualitas tinggi' },
     { icon: 'palette', tone: 'amber', title: 'Jasa Desain', text: 'Pembuatan desain grafis profesional seperti feed media sosial, logo, banner, dan lainnya' },
-    { icon: 'lightbulb', tone: 'amber', title: 'Kreatif Studio', text: 'Penyediaan fasilitas ruang studio modern' },
-    { icon: 'users', tone: 'amber', title: 'Digital Marketing', text: 'Strategi pemasaran digital untuk meningkatkan brand' },
+    { icon: 'lightbulb', tone: 'violet', title: 'Kreatif Studio', text: 'Penyediaan fasilitas ruang studio modern' },
+    { icon: 'users', tone: 'coral', title: 'Digital Marketing', text: 'Strategi pemasaran digital untuk meningkatkan brand' },
     { icon: 'website', tone: 'amber', title: 'Jasa Website', text: 'Layanan pembuatan dan pengembangan situs web atau landing page yang responsif dan optimal untuk bisnis anda' },
   ],
 }
@@ -82,7 +82,7 @@ export const projects = {
 
 export const process = {
   eyebrow: 'Kreatifest Indonesia',
-  title: 'TELAH DIPERCAYA OLEH',
+  title: 'Telah Dipercaya oleh',
 }
 
 export const impact = {
@@ -118,21 +118,21 @@ export const contact = {
     { 
       icon: 'mail', 
       tone: 'violet', 
-      label: 'Email placeholder', 
+      label: 'Kirim lewat Email', 
       value: 'kreatifest.ind@gmail.com', 
       subject: 'Halo, saya ingin bertanya', // Subjek otomatis
       body: 'Halo admin, saya tertarik untuk mengetahui lebih lanjut tentang layanan Kreatifest. Apakah saya bisa mendapatkan informasi lebih detail mengenai layanan yang tersedia ? Terima kasih.' // Isi pesan otomatis
     },
     { 
       icon: 'instagram', 
-      tone: 'violet', 
+      tone: 'coral', 
       label: 'DM via Instagram', 
       value: 'kreatifest.co', // Isi dengan username IG Anda tanpa '@'
       text: 'Halo, Kreatifest Indonesia! Saya tertarik untuk mengetahui lebih lanjut tentang layanan Kreatifest. Apakah saya bisa mendapatkan informasi lebih detail mengenai layanan yang tersedia?Terima kasih. :) '
     },
     { 
       icon: 'whatsapp', 
-      tone: 'coral', 
+      tone: 'amber', 
       label: 'Hubungi via WhatsApp', 
       value: '6285214102735', // Gunakan nomor HP saja (tanpa '+', '-', atau spasi)
       text: 'Halo, Kreatifest Indonesia! Saya tertarik untuk mengetahui lebih lanjut tentang layanan Kreatifest. Apakah saya bisa mendapatkan informasi lebih detail mengenai layanan yang tersedia?Terima kasih. :) ' // Teks pesan otomatis
@@ -155,7 +155,15 @@ export const contact = {
     {
       question: 'Apakah bisa melakukan kustomisasi paket layanan?',
       answer: 'Tentu saja! Kami menyediakan solusi kustom yang dapat disesuaikan dengan kebutuhan dan anggaran bisnis Anda.'
-    }
+    },
+    {
+      question: 'Apakah Kreatifest menerima proyek dari luar kota atau luar negeri?',
+      answer: 'Ya, kami menerima proyek dari berbagai lokasi. Komunikasi dapat dilakukan secara online melalui email, video call, atau platform komunikasi lainnya.'
+    },
+    {
+      question: 'Bagaimana cara memulai kerja sama dengan Kreatifest?',
+      answer: 'Anda dapat menghubungi kami melalui email, Instagram, atau WhatsApp yang tertera di halaman kontak. Tim kami akan segera merespons untuk mendiskusikan kebutuhan dan langkah selanjutnya.'
+    },
   ]
 }
 

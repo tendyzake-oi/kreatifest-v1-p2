@@ -14,6 +14,7 @@ const FORCE_JOIN_WINDOW_MS = 10 * 1000
 const sources = [
   { name: 'Search Engine Journal', region: 'international', url: 'https://www.searchenginejournal.com/feed/' },
   { name: 'Social Media Today', region: 'international', url: 'https://www.socialmediatoday.com/feeds/news/' },
+  { name: 'HubSpot Marketing', region: 'international', url: 'https://blog.hubspot.com/marketing/rss.xml' },
   { name: 'Marketing.co.id', region: 'indonesia', url: 'https://marketing.co.id/feed/' },
   { name: 'DailySocial', region: 'indonesia', url: 'https://dailysocial.id/feed' },
 ]
@@ -256,6 +257,21 @@ export async function getLatestNews(limit = 6, { force = false } = {}) {
 
   const result = await refreshInProgress
   return { ...result, articles: groupArticles(result.articles, limit) }
+}
+
+/**
+ * Ringkasan kondisi cache untuk endpoint health check.
+ * Exposed lewat fungsi supaya state internal tetap private.
+ */
+export function getCacheStatus() {
+  return {
+    ttlMinutes: CACHE_TTL_MS / 60_000,
+    articleCount: cachedArticles.length,
+    lastUpdatedAt: cacheUpdatedAt,
+    lastRefreshAt: lastRefreshAt ? new Date(lastRefreshAt).toISOString() : null,
+    stale: cacheIsStale,
+    refreshInProgress: Boolean(refreshInProgress),
+  }
 }
 
 /** Isi cache saat server start supaya request pertama tidak menunggu feed. */
